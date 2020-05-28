@@ -32,16 +32,16 @@ CREATE TABLE videos --création du tableau videos
 INSERT INTO `images`(`id`,`name`,`link`,`width`,`height`,`format`,`description`) VALUES --ajout de 2 lignes au tableau images
 (1,'orwellPortrait','https://upload.wikimedia.org/wikipedia/commons/7/7e/George_Orwell_press_photo.jpg','1176','1596','jpg','Portrait de l\'auteur Georges Orwell'),
 (2,'steinbeckPortrait','https://live.staticflickr.com/525/18306511889_1c9606e8ea_z.jpg','640','476','jpg','Portrait de l\'auteur John Steinbeck');
-SHOW COLUMNS FROM images; --OU SELECT * FROM `images`;
+SELECT `id`,`name`,`link`,`width`,`height`,`format`,`description` FROM `images`; --montre toutes les colonnes de images
 INSERT INTO `videos`(`id`,`name`,`link`,`duration`,`description`,`publicationDate`) VALUES --ajout de 2 lignes au tableau videos
 (1,'1984_trailer','https://www.youtube.com/watch?v=Z4rBDUJTnNU&t=4s','2:39','Bande annonce du film 1984','2020-05-15'),
 (2,'micemen_trailer','https://www.youtube.com/watch?v=2QnM6hsXxNE','10:41','Bande annonce du film des Souris et des hommes','2020-01-02');
-SHOW COLUMNS FROM videos; --OU SELECT * FROM `videos`;
+SELECT `id`,`name`,`link`,`duration`,`description`,`publicationDate` FROM `videos`; --montre toutes les colonnes de videos
 --Exo 7
 UPDATE `mediabank`.`videos` SET `publicationDate`='2020-05-27' WHERE `id`='1'; --change la data de publicationDate
-SELECT * FROM `videos` LIMIT 1; --montre la ligne 1 de videos
+SELECT `id`,`name`,`link`,`width`,`height`,`format`,`description` FROM `videos` LIMIT 1; --montre la ligne 1 de videos
 UPDATE `mediabank`.`videos` SET `duration`='1:41' WHERE `id`='2'; --change la data de duration
-SELECT * FROM `videos` LIMIT 1,3; --montre la ligne 2 de videos
+SELECT `id`,`name`,`link`,`duration`,`description`,`publicationDate` FROM `videos` LIMIT 1,3; --montre la ligne 2 de videos
 --Exo 8
 DELETE FROM `images` WHERE `id` = 2; --supprime la ligne 2 de images
 DELETE FROM `videos` WHERE `id` = 1; --supprime la ligne 1 de videos
